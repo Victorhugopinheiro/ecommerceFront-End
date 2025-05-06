@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { ShoppingCartIcon, Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
+import { FaBars, FaMobile, FaShoppingCart } from "react-icons/fa"
 import { useEffect, useState } from "react"
 import { Button } from "./ui/button"
 import { useCartStore } from "@/store/cart-store"
@@ -65,7 +65,7 @@ export const Navbar = () => {
 
                     <div className="flex gap-6 items-center justify-center space-x-4">
                         <Link className="relative flex justify-center items-center" href={"/checkout"}>
-                            <ShoppingCartIcon className="w-6 h-6 " />
+                            <FaShoppingCart className="w-6 h-6 " />
                             {cartCount > 0 && (
                                 <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
                                     {cartCount}
@@ -75,7 +75,7 @@ export const Navbar = () => {
                         </Link>
 
 
-                        <Button className="md:hidden flex justify-center items-center" onClick={() => setResize(!resize)}>{resize ? <XMarkIcon /> : <Bars3Icon />}</Button>
+                        <Button className="md:hidden flex justify-center items-center" onClick={() => setResize(!resize)}>{resize ? <FaMobile /> : <FaBars />}</Button>
 
                     </div>
 
